@@ -37,6 +37,7 @@
             new Calendar(calendarElement, {
                 style: 'background',
                 dataSource: holidays,
+                language: 'es',
                 mouseOnDay: function(e) {
                     if (e.events.length > 0) {
                         var content = '';

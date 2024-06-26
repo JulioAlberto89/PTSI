@@ -74,10 +74,10 @@
                             <!-- Recurrente -->
                             <div class="w-1/5">
                                 <x-input-label for="recurrent" :value="__('Recurrente')" />
-                                <select id="recurrent" name="recurrent" class="mt-1 block w-full">
-                                    <option value="1" {{ $holiday->recurrent == 1 ? 'selected' : '' }}>Sí</option>
-                                    <option value="0" {{ $holiday->recurrent == 0 ? 'selected' : '' }}>No</option>
-                                </select>
+                                <div class="mt-1 block w-full">
+                                    <input type="checkbox" id="recurrent" name="recurrent" value="1" {{ $holiday->recurrent == 1 ? 'checked' : '' }}>
+                                    <label for="recurrent">Sí</label>
+                                </div>
                                 <x-input-error class="mt-2" :messages="$errors->get('recurrent')" />
                             </div>
 
