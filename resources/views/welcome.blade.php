@@ -169,5 +169,14 @@
                 </div>
             </div>
         </div>
+        <script src="https://unpkg.com/js-year-calendar/dist/js-year-calendar.min.js"></script>
+        <script src="https://unpkg.com/js-year-calendar/locales/js-year-calendar.es.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                new Calendar('#calendar', {
+                    language: 'es'
+                });
+            });
+        </script>
     </body>
 </html>
