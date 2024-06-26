@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HolidayController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -9,18 +10,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::get('/users', [UserController::class, 'index'])
-//     ->middleware(['auth', 'verified'])
-//     ->name('users');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('holidays', HolidayController::class);
-    Route::get('/holidaysData', [HolidayController::class, 'getHolidays']);
 });
 
 Route::middleware('auth')->group(function () {
