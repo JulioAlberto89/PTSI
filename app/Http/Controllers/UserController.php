@@ -49,10 +49,10 @@ class UserController extends Controller
             'email' => $data['email']
         ]);
 
-        return redirect()->route('users.index')->with('success', 'User updated successfully');
-    } catch (\Exception $e) {
-        return redirect()->back()->with('error', 'Error updating user: ' . $e->getMessage());
-    }
+        return redirect()->route('users.index')->with('success', 'User actualizado correctamente');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Error updating user: ' . $e->getMessage());
+        }
     }
 
     public function destroy(User $user)
