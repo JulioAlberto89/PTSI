@@ -34,7 +34,7 @@
                 {{ $slot }}
             </main>
         </div>
-        <footer class="bg-cyan-200 py-16 text-center text-sm text-black dark:text-white/70">
+        <footer class="py-16 text-center text-sm text-black dark:text-white/70" style="position: fixed; bottom: 0; width: 100%;">
             Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
         </footer>
     </body>
